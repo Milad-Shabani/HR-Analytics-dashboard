@@ -1,0 +1,48 @@
+name: Deploy dashboard to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Assemble Pages site
+        # The dashboard expects the workbook one level up (../data/...),
+        # which works locally, but GitHub Pages serves everything from a
+        # single root -- so we publish "dashboard/" and "data/" together
+        # under one folder and rewrite the reference at deploy time only.
+        run: |
+          mkdir -p _site
+          cp -r dashboard/. _site/
+          mkdir -p _site/data
+          cp -r data/. _site/data/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
