@@ -4,7 +4,7 @@ REM Requires: git, GitHub CLI (gh) authenticated (gh auth login).
 
 setlocal
 set REPO_NAME=hr-analytics-dashboard
-set DESCRIPTION=Full-stack HR / People Analytics portfolio project — synthetic workforce data engine, live-formula Excel workbook, statistical forecasting ^& explainable attrition-risk model, self-contained HTML dashboard (zero external dependencies). Fictional TelNova Communications ISP.
+set DESCRIPTION=Full-stack HR / People Analytics portfolio project -- synthetic workforce data engine, live-formula Excel workbook, statistical forecasting ^& explainable attrition-risk model, self-contained HTML dashboard (zero external dependencies). Fictional TelNova Communications ISP.
 set GIT_USER_NAME=Milad Shabani
 set GIT_USER_EMAIL=MILAD.SHABANI6515@GMAIL.COM
 
@@ -26,6 +26,9 @@ if errorlevel 1 (
     echo Repo already exists on GitHub, skipping create.
 )
 
+echo ==^> Syncing repo description (also fixes it if it was garbled before)
+gh repo edit --description "%DESCRIPTION%"
+
 echo ==^> Pushing
 git push -u origin main
 
@@ -34,7 +37,11 @@ gh repo edit --add-topic hr-analytics --add-topic people-analytics --add-topic b
 
 echo ==^> Enabling GitHub Pages (workflow build)
 for /f "delims=" %%i in ('gh api user --jq .login') do set OWNER=%%i
-gh api -X PUT "repos/%OWNER%/%REPO_NAME%/pages" -f build_type=workflow
+gh api "repos/%OWNER%/%REPO_NAME%/pages" -f build_type=workflow >nul 2>&1
+if errorlevel 1 (
+    echo Pages site already exists, updating build type instead
+    gh api -X PUT "repos/%OWNER%/%REPO_NAME%/pages" -f build_type=workflow
+)
 
 echo.
 echo Done. Repo: https://github.com/%OWNER%/%REPO_NAME%

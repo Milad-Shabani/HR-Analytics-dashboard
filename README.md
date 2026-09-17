@@ -192,6 +192,8 @@ This one creates the GitHub repo, pushes, sets topics, and turns on Pages automa
 
 Either way, once pushed: **Settings → Pages → Source → GitHub Actions**. The included workflow (`.github/workflows/deploy-pages.yml`) builds and publishes the dashboard automatically on every push to `main`.
 
+> **First deploy shows "Failed to deploy"?** This almost always means the Pages *source* is still set to "Deploy from a branch" instead of "GitHub Actions" — a brand-new repo has no Pages site yet, so the very first API call to enable it must be a `POST`, not a `PUT` (an easy mistake to make in a setup script; fixed in `publish.bat` above). Set it manually once in **Settings → Pages → Source → GitHub Actions**, then re-run the failed workflow from the **Actions** tab (**Re-run all jobs**) — it will succeed from then on.
+
 ---
 
 ## Data & ethics notice
