@@ -19,3 +19,4 @@ Thumbs.db
 
 # Local server logs
 *.log
+*.draft.md
