@@ -120,7 +120,6 @@ hr-analytics-dashboard/
 ├── .github/workflows/
 │   └── deploy-pages.yml         # Auto-publishes the dashboard to GitHub Pages
 ├── publish_to_github.sh         # One-command script to push this repo to GitHub (macOS/Linux)
-├── publish.bat                  # One-click equivalent for Windows (requires git + GitHub CLI)
 ├── requirements.txt
 ├── LICENSE
 └── README.md
@@ -184,15 +183,9 @@ chmod +x publish_to_github.sh
 ./publish_to_github.sh https://github.com/<your-username>/hr-analytics-dashboard.git
 ```
 
-**Windows** (requires [git](https://git-scm.com/) and the [GitHub CLI](https://cli.github.com/), authenticated via `gh auth login`):
-```bat
-publish.bat
-```
-This one creates the GitHub repo, pushes, sets topics, and turns on Pages automatically — no manual repo creation needed first (unlike the bash script, which expects an existing empty repo).
+Once pushed: **Settings → Pages → Source → GitHub Actions**. The included workflow (`.github/workflows/deploy-pages.yml`) builds and publishes the dashboard automatically on every push to `main`.
 
-Either way, once pushed: **Settings → Pages → Source → GitHub Actions**. The included workflow (`.github/workflows/deploy-pages.yml`) builds and publishes the dashboard automatically on every push to `main`.
-
-> **First deploy shows "Failed to deploy"?** This almost always means the Pages *source* is still set to "Deploy from a branch" instead of "GitHub Actions" — a brand-new repo has no Pages site yet, so the very first API call to enable it must be a `POST`, not a `PUT` (an easy mistake to make in a setup script; fixed in `publish.bat` above). Set it manually once in **Settings → Pages → Source → GitHub Actions**, then re-run the failed workflow from the **Actions** tab (**Re-run all jobs**) — it will succeed from then on.
+> **First deploy shows "Failed to deploy"?** This almost always means the Pages *source* is still set to "Deploy from a branch" instead of "GitHub Actions" — a brand-new repo has no Pages site yet, so the very first API call to enable it must be a `POST`, not a `PUT`. Set it manually once in **Settings → Pages → Source → GitHub Actions**, then re-run the failed workflow from the **Actions** tab (**Re-run all jobs**) — it will succeed from then on.
 
 ---
 
