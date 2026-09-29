@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR Analytics Dashboard — TelNova Communications</title>
-<meta name="description" content="Comprehensive HR workforce analytics dashboard for TelNova Communications: workforce composition, compensation, retention, talent acquisition, engagement and workforce planning.">
+<title>داشبورد تحلیل منابع انسانی — TelNova Communications</title>
+<meta name="description" content="داشبورد جامع تحلیل منابع انسانی برای TelNova Communications: ترکیب نیروی کار، جبران خدمات، ماندگاری، جذب استعداد، مشارکت کارکنان و برنامه‌ریزی نیروی انسانی.">
 <link rel="alternate" hreflang="en" href="https://milad-shabani.github.io/HR-Analytics-dashboard/">
 <link rel="alternate" hreflang="fa" href="https://milad-shabani.github.io/HR-Analytics-dashboard/fa/">
 <link rel="alternate" hreflang="x-default" href="https://milad-shabani.github.io/HR-Analytics-dashboard/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script id="vendor-chartjs">
 /*!
  * Chart.js v4.4.4
@@ -68,20 +68,23 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
     --shadow: 0 1px 2px rgba(16,32,61,.04), 0 8px 24px -12px rgba(16,32,61,.10);
   }
   *{box-sizing:border-box;}
+  code{direction:ltr;unicode-bidi:embed;font-size:.92em;}
+  .chart-box{direction:ltr;}
+  td.ltr{direction:ltr;text-align:right;unicode-bidi:plaintext;}
   html,body{margin:0;padding:0;}
-  body{background:var(--bg); color:var(--ink); font-family:'Inter',system-ui,-apple-system,sans-serif; -webkit-font-smoothing:antialiased; line-height:1.5;}
-  h1,h2,h3,.display{font-family:'Space Grotesk',system-ui,sans-serif; color:var(--ink); margin:0;}
+  body{direction:rtl;text-align:right;background:var(--bg); color:var(--ink); font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; line-height:1.5;}
+  h1,h2,h3,.display{font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif; color:var(--ink); margin:0;}
   a{color:var(--teal-dark);}
   .wrap{max-width:1360px;margin:0 auto;padding:0 28px;}
 
   .topbar{border-bottom:1px solid var(--line); padding:16px 0; position:sticky; top:0; background:rgba(255,255,255,.94); backdrop-filter:blur(6px); z-index:60;}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
   .brand{display:flex;align-items:center;gap:12px;}
-  .brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--teal) 0%, var(--teal-dark) 100%);display:flex;align-items:center;justify-content:center;color:white;font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:15px;flex-shrink:0;}
-  .brand-text h1{font-size:17.5px;font-weight:700;letter-spacing:-.01em;}
+  .brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--teal) 0%, var(--teal-dark) 100%);display:flex;align-items:center;justify-content:center;color:white;font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;font-weight:700;font-size:15px;flex-shrink:0;}
+  .brand-text h1{font-size:17.5px;font-weight:700;letter-spacing:0;}
   .brand-text p{margin:0;font-size:12px;color:var(--muted);}
   .top-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  select, .btn{font-family:'Inter',system-ui,sans-serif;font-size:12.5px;font-weight:500;border:1px solid var(--line); background:var(--surface); color:var(--ink); padding:8px 13px;border-radius:10px; cursor:pointer;}
+  select, .btn{font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;font-size:12.5px;font-weight:500;border:1px solid var(--line); background:var(--surface); color:var(--ink); padding:8px 13px;border-radius:10px; cursor:pointer;}
   .btn:hover{border-color:var(--teal);}
   select:focus,.btn:focus{outline:2px solid var(--teal);outline-offset:1px;}
   #status-pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--ink-soft);background:var(--surface); border:1px solid var(--line); padding:6px 12px;border-radius:var(--radius-pill);}
@@ -97,35 +100,35 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
   section{padding:38px 0;} section.tight{padding:20px 0;}
   .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
-  .section-head h2{font-size:20px;font-weight:600;letter-spacing:-.01em;}
+  .section-head h2{font-size:20px;font-weight:600;letter-spacing:0;}
   .section-head .hint{font-size:12.5px;color:var(--muted);}
   .divider{border:none;border-top:1px solid var(--line);margin:0;}
 
   .hero{padding:40px 0 6px;}
   .hero-grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:40px; align-items:end;}
-  .hero h2{font-size:32px;line-height:1.16;font-weight:700;letter-spacing:-.02em;max-width:580px;}
+  .hero h2{font-size:32px;line-height:1.16;font-weight:700;letter-spacing:0;max-width:580px;}
   .hero p.lead{font-size:15px;color:var(--ink-soft);max-width:540px;margin-top:12px;}
   .hero-figure{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; display:flex; flex-direction:column; gap:3px;}
-  .hero-figure .big{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:38px;color:var(--teal-dark);letter-spacing:-.02em;}
+  .hero-figure .big{font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;font-weight:700;font-size:38px;color:var(--teal-dark);letter-spacing:0;}
   .hero-figure .label{font-size:12.5px;color:var(--ink-soft);}
   .hero-figure .sub{font-size:12px;color:var(--muted);margin-top:5px;}
 
   /* Executive summary insight cards */
   .insight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-  .insight-card{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--teal); border-radius:12px; padding:15px 16px;}
-  .insight-card.warn{border-left-color:var(--orange);}
-  .insight-card.alert{border-left-color:var(--red);}
-  .insight-card.good{border-left-color:var(--green);}
-  .insight-card .i-tag{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+  .insight-card{background:var(--surface); border:1px solid var(--line); border-right:3px solid var(--teal); border-radius:12px; padding:15px 16px;}
+  .insight-card.warn{border-right-color:var(--orange);}
+  .insight-card.alert{border-right-color:var(--red);}
+  .insight-card.good{border-right-color:var(--green);}
+  .insight-card .i-tag{font-size:10.5px;font-weight:700;letter-spacing:0;color:var(--muted);}
   .insight-card p{margin:6px 0 0;font-size:13px;color:var(--ink);line-height:1.45;}
   .insight-card strong{color:var(--teal-dark);}
 
   .kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:13px;}
   .kpi-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-card); padding:15px 15px 13px;}
   .kpi-card .k-label{font-size:11.5px;color:var(--ink-soft);font-weight:500;min-height:30px;}
-  .kpi-card .k-value{font-family:'Space Grotesk',system-ui,sans-serif;font-size:22px;font-weight:700;margin-top:5px;letter-spacing:-.01em;}
+  .kpi-card .k-value{font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;font-size:22px;font-weight:700;margin-top:5px;letter-spacing:0;}
   .kpi-card .k-delta{font-size:11px;margin-top:4px;font-weight:600;color:var(--muted);}
-  .kpi-category{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-dark);margin:22px 0 10px;}
+  .kpi-category{font-size:11px;font-weight:700;letter-spacing:0;color:var(--teal-dark);margin:22px 0 10px;}
   .kpi-category:first-child{margin-top:0;}
 
   .grid-2{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;}
@@ -143,10 +146,10 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
   .legend-row .sw{width:9px;height:9px;border-radius:3px;display:inline-block;}
 
   table{width:100%;border-collapse:collapse;font-size:12.6px;}
-  thead th{text-align:left;font-weight:600;color:var(--ink-soft);border-bottom:1px solid var(--line); padding:8px 10px; font-size:11.2px;}
+  thead th{text-align:right;font-weight:600;color:var(--ink-soft);border-bottom:1px solid var(--line); padding:8px 10px; font-size:11.2px;}
   tbody td{padding:8px 10px;border-bottom:1px solid var(--surface-2);color:var(--ink);}
   tbody tr:hover{background:var(--surface);}
-  .badge{display:inline-block;padding:3px 9px;border-radius:var(--radius-pill);font-size:10.8px;font-weight:700;letter-spacing:.01em;}
+  .badge{display:inline-block;padding:3px 9px;border-radius:var(--radius-pill);font-size:10.8px;font-weight:700;letter-spacing:0;}
   .badge.Critical{background:#FBE4E4;color:#B23A3A;} .badge.High{background:#FDEBDD;color:#B45A1F;}
   .badge.Medium{background:#FCF3D8;color:#93711A;} .badge.Low{background:#E4F3E9;color:#1F7A44;}
 
@@ -155,10 +158,10 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
   footer{border-top:1px solid var(--line);padding:32px 0 40px;margin-top:20px;}
   .creator-box{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px 24px;}
-  .avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--teal) 0%, var(--ink) 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:22px;object-fit:cover;border:2px solid var(--bg); box-shadow:0 0 0 1px var(--line);}
+  .avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--teal) 0%, var(--ink) 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;font-weight:700;font-size:22px;object-fit:cover;border:2px solid var(--bg); box-shadow:0 0 0 1px var(--line);}
   .creator-meta h3{font-size:16px;font-weight:700;} .creator-meta p{margin:2px 0 0;font-size:13px;color:var(--ink-soft);}
   .creator-meta .role{color:var(--teal-dark);font-weight:600;font-size:12.5px;margin-top:4px;}
-  .foot-links{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
+  .foot-links{margin-inline-start:auto;display:flex;gap:10px;flex-wrap:wrap;}
   .foot-links a{font-size:12.5px;font-weight:600;color:var(--ink);border:1px solid var(--line);padding:7px 13px;border-radius:var(--radius-pill);text-decoration:none; background:#fff;}
   .foot-links a:hover{border-color:var(--teal);color:var(--teal-dark);}
   .fineprint{font-size:11.3px;color:var(--muted);margin-top:16px;max-width:860px;}
@@ -192,31 +195,31 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
     <div class="brand">
       <div class="brand-mark">HR</div>
       <div class="brand-text">
-        <h1>HR Analytics Dashboard</h1>
-        <p>TelNova Communications · Workforce Intelligence</p>
+        <h1>داشبورد تحلیل منابع انسانی</h1>
+        <p>TelNova Communications · هوشمندی نیروی کار</p>
       </div>
     </div>
     <div class="top-actions">
-      <a class="btn lang-switch" href="fa/" hreflang="fa" lang="fa" title="نسخه فارسی">فارسی</a>
+      <a class="btn lang-switch" href="../" hreflang="en" lang="en" dir="ltr" title="English version">English</a>
       <div class="filter-row">
-        <label for="dept-filter">Department</label>
-        <select id="dept-filter"><option value="__ALL__">All departments</option></select>
+        <label for="dept-filter">واحد سازمانی</label>
+        <select id="dept-filter"><option value="__ALL__">همه‌ی واحدها</option></select>
       </div>
-      <button class="btn" id="reload-live-btn" title="Re-read HR_Analytics_Workbook.xlsx directly (works when this page is served over http/https)">↻ Reload live from Excel</button>
-      <span id="status-pill"><span class="dot"></span><span id="status-text">Loading…</span></span>
+      <button class="btn" id="reload-live-btn" title="خواندن مستقیم HR_Analytics_Workbook.xlsx (هنگامی که صفحه روی http/https اجرا شود کار می‌کند)">↻ بازخوانی زنده از اکسل</button>
+      <span id="status-pill"><span class="dot"></span><span id="status-text">در حال بارگذاری…</span></span>
     </div>
   </div>
   <nav class="subnav">
     <div class="wrap">
-      <a href="#exec-summary">Summary</a>
-      <a href="#trends">Trends</a>
-      <a href="#composition">Composition</a>
-      <a href="#compensation">Compensation</a>
-      <a href="#retention">Retention</a>
-      <a href="#talent-acquisition">Hiring</a>
-      <a href="#engagement-learning">Engagement</a>
-      <a href="#performance-talent">Performance</a>
-      <a href="#planning-risk">Planning &amp; Risk</a>
+      <a href="#exec-summary">خلاصه</a>
+      <a href="#trends">روندها</a>
+      <a href="#composition">ترکیب نیروی کار</a>
+      <a href="#compensation">جبران خدمات</a>
+      <a href="#retention">ماندگاری</a>
+      <a href="#talent-acquisition">جذب</a>
+      <a href="#engagement-learning">مشارکت</a>
+      <a href="#performance-talent">عملکرد</a>
+      <a href="#planning-risk">برنامه‌ریزی و ریسک</a>
     </div>
   </nav>
 </header>
@@ -226,28 +229,28 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <h2>One workbook. One source of truth for workforce decisions.</h2>
-      <p class="lead">Every figure below is generated from <strong>HR_Analytics_Workbook.xlsx</strong> — the same workbook HR business partners use for reporting. This page opens instantly from a build-time snapshot; use <em>Reload live from Excel</em> to re-read the workbook directly when serving this project over a web server.</p>
+      <h2>یک فایل اکسل. یک منبع واحد و قابل‌اتکا برای تصمیم‌های مربوط به نیروی انسانی.</h2>
+      <p class="lead">تمام اعداد زیر از <strong dir="ltr">HR_Analytics_Workbook.xlsx</strong> ساخته شده‌اند — همان فایلی که شرکای کسب‌وکار منابع انسانی برای گزارش‌دهی استفاده می‌کنند. این صفحه از روی یک نسخه‌ی ثابتِ زمان ساخت بلافاصله باز می‌شود؛ هنگامی که پروژه روی وب‌سرور اجرا شود، با گزینه‌ی <em>بازخوانی زنده از اکسل</em> می‌توانید فایل را دوباره مستقیم بخوانید.</p>
     </div>
     <div class="hero-figure">
-      <span class="label">Active workforce serving</span>
+      <span class="label">نیروی فعال در خدمت‌رسانی به</span>
       <span class="big" id="hero-subscribers">—</span>
-      <span class="label">subscribers across fiber, mobile &amp; TV</span>
-      <span class="sub" id="hero-asof">As of —</span>
+      <span class="label">مشترک فیبر نوری، موبایل و تلویزیون</span>
+      <span class="sub" id="hero-asof">تا —</span>
     </div>
   </div>
 </section>
 
 <section class="tight" id="exec-summary">
   <div class="wrap">
-    <div class="section-head"><h2>Executive summary</h2><span class="hint">Auto-generated highlights from the current dataset</span></div>
+    <div class="section-head"><h2>خلاصه‌ی مدیریتی</h2><span class="hint">نکات برجسته‌ی تولیدشده به‌صورت خودکار از داده‌های فعلی</span></div>
     <div class="insight-grid" id="insight-grid"></div>
   </div>
 </section>
 
 <section class="tight" id="headline-kpis">
   <div class="wrap">
-    <div class="section-head"><h2>Headline metrics</h2><span class="hint">Computed live with COUNTIFS / AVERAGEIFS / SUMIFS in <code>KPI_Dashboard</code></span></div>
+    <div class="section-head"><h2>شاخص‌های کلیدی</h2><span class="hint">محاسبه‌شده به‌صورت زنده با COUNTIFS / AVERAGEIFS / SUMIFS در <code>KPI_Dashboard</code></span></div>
     <div id="kpi-container"></div>
   </div>
 </section>
@@ -256,26 +259,26 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <section id="trends">
   <div class="wrap">
-    <div class="section-head"><h2>Headcount &amp; attrition trends</h2><span class="hint">36 months actual, 12 months forecast</span></div>
+    <div class="section-head"><h2>روند تعداد نیرو و ترک خدمت</h2><span class="hint">۳۶ ماه داده‌ی واقعی، ۱۲ ماه پیش‌بینی</span></div>
     <div class="grid-2">
-      <div class="card"><h3>Headcount trend + 12-month forecast</h3><p class="card-sub">Actual reconstructed monthly headcount, blended trend/growth-target forecast.</p><div class="chart-box tall"><canvas id="chart-headcount"></canvas></div></div>
-      <div class="card"><h3>Monthly attrition rate forecast</h3><p class="card-sub">Holt's linear exponential smoothing, α=0.35, β=0.25.</p><div class="chart-box tall"><canvas id="chart-attrition-forecast"></canvas></div></div>
+      <div class="card"><h3>روند تعداد نیرو + پیش‌بینی ۱۲ ماهه</h3><p class="card-sub">تعداد ماهانه‌ی بازسازی‌شده‌ی واقعی و پیش‌بینی ترکیبی روند و هدف رشد.</p><div class="chart-box tall"><canvas id="chart-headcount"></canvas></div></div>
+      <div class="card"><h3>پیش‌بینی نرخ ماهانه‌ی ترک خدمت</h3><p class="card-sub">هموارسازی نمایی خطی هولت، α=۰٫۳۵ و β=۰٫۲۵.</p><div class="chart-box tall"><canvas id="chart-attrition-forecast"></canvas></div></div>
     </div>
   </div>
 </section>
 
 <section class="tight" id="composition">
   <div class="wrap">
-    <div class="section-head"><h2>Workforce composition</h2><span class="hint">Active employees, filtered view</span></div>
+    <div class="section-head"><h2>ترکیب نیروی کار</h2><span class="hint">کارکنان فعال، نمای فیلترشده</span></div>
     <div class="grid-3">
-      <div class="card"><h3>Headcount by department</h3><div class="chart-box"><canvas id="chart-dept"></canvas></div></div>
-      <div class="card"><h3>Gender diversity</h3><div class="chart-box"><canvas id="chart-gender"></canvas></div></div>
-      <div class="card"><h3>Age distribution</h3><div class="chart-box"><canvas id="chart-age"></canvas></div></div>
+      <div class="card"><h3>تعداد نیرو به تفکیک واحد</h3><div class="chart-box"><canvas id="chart-dept"></canvas></div></div>
+      <div class="card"><h3>تنوع جنسیتی</h3><div class="chart-box"><canvas id="chart-gender"></canvas></div></div>
+      <div class="card"><h3>توزیع سنی</h3><div class="chart-box"><canvas id="chart-age"></canvas></div></div>
     </div>
     <div class="grid-3" style="margin-top:18px;">
-      <div class="card"><h3>Tenure distribution</h3><div class="chart-box short"><canvas id="chart-tenure-dist"></canvas></div></div>
-      <div class="card"><h3>Education level</h3><div class="chart-box short"><canvas id="chart-education"></canvas></div></div>
-      <div class="card"><h3>Employment type &amp; work location</h3><div class="chart-box short"><canvas id="chart-worklocation"></canvas></div></div>
+      <div class="card"><h3>توزیع سابقه‌ی کار</h3><div class="chart-box short"><canvas id="chart-tenure-dist"></canvas></div></div>
+      <div class="card"><h3>سطح تحصیلات</h3><div class="chart-box short"><canvas id="chart-education"></canvas></div></div>
+      <div class="card"><h3>نوع استخدام و محل کار</h3><div class="chart-box short"><canvas id="chart-worklocation"></canvas></div></div>
     </div>
   </div>
 </section>
@@ -284,11 +287,11 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <section id="compensation">
   <div class="wrap">
-    <div class="section-head"><h2>Compensation &amp; pay equity</h2><span class="hint">Active employees, USD</span></div>
+    <div class="section-head"><h2>جبران خدمات و عدالت پرداخت</h2><span class="hint">کارکنان فعال، دلار آمریکا</span></div>
     <div class="grid-3">
-      <div class="card"><h3>Compa-ratio distribution</h3><p class="card-sub">Salary ÷ market benchmark</p><div class="chart-box"><canvas id="chart-comparatio"></canvas></div></div>
-      <div class="card"><h3>Average salary by job level</h3><div class="chart-box"><canvas id="chart-salary-level"></canvas></div></div>
-      <div class="card"><h3>Gender pay gap by job level</h3><p class="card-sub">Female avg. salary as % of male avg., same level</p><div class="chart-box"><canvas id="chart-pay-gap"></canvas></div></div>
+      <div class="card"><h3>توزیع نسبت کامپا</h3><p class="card-sub">حقوق ÷ معیار بازار</p><div class="chart-box"><canvas id="chart-comparatio"></canvas></div></div>
+      <div class="card"><h3>میانگین حقوق به تفکیک سطح شغلی</h3><div class="chart-box"><canvas id="chart-salary-level"></canvas></div></div>
+      <div class="card"><h3>شکاف حقوقی جنسیتی به تفکیک سطح شغلی</h3><p class="card-sub">میانگین حقوق زنان به‌صورت درصدی از میانگین حقوق مردان در همان سطح</p><div class="chart-box"><canvas id="chart-pay-gap"></canvas></div></div>
     </div>
   </div>
 </section>
@@ -297,14 +300,14 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <section id="retention">
   <div class="wrap">
-    <div class="section-head"><h2>Retention &amp; attrition deep-dive</h2><span class="hint">All-time, since 2011</span></div>
+    <div class="section-head"><h2>بررسی عمیق ماندگاری و ترک خدمت</h2><span class="hint">کل دوره، از سال ۲۰۱۱</span></div>
     <div class="grid-2b">
-      <div class="card"><h3>Attrition rate by department</h3><p class="card-sub">Terminated ÷ (active + terminated), all-time</p><div class="chart-box"><canvas id="chart-attrition-dept"></canvas></div></div>
-      <div class="card"><h3>Voluntary vs. involuntary departures</h3><div class="chart-box"><canvas id="chart-vol-invol"></canvas></div></div>
+      <div class="card"><h3>نرخ ترک خدمت به تفکیک واحد</h3><p class="card-sub">خارج‌شدگان ÷ (فعال + خارج‌شده)، کل دوره</p><div class="chart-box"><canvas id="chart-attrition-dept"></canvas></div></div>
+      <div class="card"><h3>خروج داوطلبانه در برابر اجباری</h3><div class="chart-box"><canvas id="chart-vol-invol"></canvas></div></div>
     </div>
     <div class="grid-2b" style="margin-top:18px;">
-      <div class="card"><h3>Top reasons for departure</h3><div class="chart-box"><canvas id="chart-term-reasons"></canvas></div></div>
-      <div class="card"><h3>Departures by tenure at exit</h3><p class="card-sub">Share of all departures, by tenure cohort when they left</p><div class="chart-box"><canvas id="chart-tenure-exit"></canvas></div></div>
+      <div class="card"><h3>مهم‌ترین دلایل خروج</h3><div class="chart-box"><canvas id="chart-term-reasons"></canvas></div></div>
+      <div class="card"><h3>خروج‌ها بر اساس سابقه‌ی کار در زمان خروج</h3><p class="card-sub">سهم از کل خروج‌ها، بر اساس گروه سابقه‌ی کار در زمان ترک سازمان</p><div class="chart-box"><canvas id="chart-tenure-exit"></canvas></div></div>
     </div>
   </div>
 </section>
@@ -313,14 +316,14 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <section id="talent-acquisition">
   <div class="wrap">
-    <div class="section-head"><h2>Talent acquisition</h2><span class="hint">Last 24 months of requisitions</span></div>
+    <div class="section-head"><h2>جذب استعداد</h2><span class="hint">درخواست‌های استخدام ۲۴ ماه گذشته</span></div>
     <div class="grid-2b">
-      <div class="card"><h3>Recruiting funnel</h3><p class="card-sub">Applicants → interviewed → offered → accepted</p><div class="chart-box"><canvas id="chart-funnel"></canvas></div></div>
-      <div class="card"><h3>Time-to-fill &amp; cost-per-hire by department</h3><div class="chart-box"><canvas id="chart-recruiting-dept"></canvas></div></div>
+      <div class="card"><h3>قیف جذب</h3><p class="card-sub">متقاضی ← مصاحبه‌شده ← پیشنهاد کار ← پذیرفته‌شده</p><div class="chart-box"><canvas id="chart-funnel"></canvas></div></div>
+      <div class="card"><h3>زمان تکمیل و هزینه‌ی هر استخدام به تفکیک واحد</h3><div class="chart-box"><canvas id="chart-recruiting-dept"></canvas></div></div>
     </div>
     <div class="grid-2b" style="margin-top:18px;">
-      <div class="card"><h3>Sourcing channel effectiveness</h3><p class="card-sub">Hires produced per channel and average cost-per-hire</p><div class="chart-box"><canvas id="chart-source"></canvas></div></div>
-      <div class="card"><h3>Open requisitions by department</h3><div class="chart-box"><canvas id="chart-open-reqs"></canvas></div></div>
+      <div class="card"><h3>اثربخشی کانال‌های جذب</h3><p class="card-sub">تعداد استخدام به تفکیک کانال و میانگین هزینه‌ی هر استخدام</p><div class="chart-box"><canvas id="chart-source"></canvas></div></div>
+      <div class="card"><h3>درخواست‌های استخدام باز به تفکیک واحد</h3><div class="chart-box"><canvas id="chart-open-reqs"></canvas></div></div>
     </div>
   </div>
 </section>
@@ -329,14 +332,14 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <section id="engagement-learning">
   <div class="wrap">
-    <div class="section-head"><h2>Engagement &amp; learning</h2><span class="hint">Quarterly pulse survey, last 8 quarters</span></div>
+    <div class="section-head"><h2>مشارکت و یادگیری</h2><span class="hint">نظرسنجی فصلی، ۸ فصل اخیر</span></div>
     <div class="grid-2b">
-      <div class="card"><h3>Engagement &amp; eNPS trend</h3><div class="chart-box"><canvas id="chart-engagement"></canvas></div></div>
-      <div class="card"><h3>Engagement dimensions, latest quarter</h3><div class="chart-box"><canvas id="chart-eng-radar"></canvas></div></div>
+      <div class="card"><h3>روند مشارکت و eNPS</h3><div class="chart-box"><canvas id="chart-engagement"></canvas></div></div>
+      <div class="card"><h3>ابعاد مشارکت، آخرین فصل</h3><div class="chart-box"><canvas id="chart-eng-radar"></canvas></div></div>
     </div>
     <div class="grid-2b" style="margin-top:18px;">
-      <div class="card"><h3>Training investment by category</h3><p class="card-sub">Hours completed, trailing 12 months</p><div class="chart-box"><canvas id="chart-training"></canvas></div></div>
-      <div class="card"><h3>Training cost by category</h3><div class="chart-box"><canvas id="chart-training-cost"></canvas></div></div>
+      <div class="card"><h3>سرمایه‌گذاری آموزشی به تفکیک دسته</h3><p class="card-sub">ساعت‌های تکمیل‌شده، ۱۲ ماه گذشته</p><div class="chart-box"><canvas id="chart-training"></canvas></div></div>
+      <div class="card"><h3>هزینه‌ی آموزش به تفکیک دسته</h3><div class="chart-box"><canvas id="chart-training-cost"></canvas></div></div>
     </div>
   </div>
 </section>
@@ -345,14 +348,14 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <section id="performance-talent">
   <div class="wrap">
-    <div class="section-head"><h2>Performance &amp; talent</h2><span class="hint">Active employees</span></div>
+    <div class="section-head"><h2>عملکرد و استعداد</h2><span class="hint">کارکنان فعال</span></div>
     <div class="grid-2">
-      <div class="card"><h3>Performance vs. engagement map</h3><p class="card-sub">Each point is one employee — highlighted points are flagged high-potential</p><div class="chart-box tall"><canvas id="chart-9box"></canvas></div></div>
-      <div class="card"><h3>Performance rating distribution</h3><div class="chart-box tall"><canvas id="chart-performance"></canvas></div></div>
+      <div class="card"><h3>نقشه‌ی عملکرد در برابر مشارکت</h3><p class="card-sub">هر نقطه یک کارمند است — نقاط پررنگ‌تر نشان‌دهنده‌ی پتانسیل بالا هستند</p><div class="chart-box tall"><canvas id="chart-9box"></canvas></div></div>
+      <div class="card"><h3>توزیع امتیاز عملکرد</h3><div class="chart-box tall"><canvas id="chart-performance"></canvas></div></div>
     </div>
     <div class="grid-2b" style="margin-top:18px;">
-      <div class="card"><h3>Promotion rate by department</h3><p class="card-sub">Share of active employees with ≥1 promotion</p><div class="chart-box"><canvas id="chart-promotion"></canvas></div></div>
-      <div class="card"><h3>High-potential talent by department</h3><div class="chart-box"><canvas id="chart-hipo"></canvas></div></div>
+      <div class="card"><h3>نرخ ارتقا به تفکیک واحد</h3><p class="card-sub">سهم کارکنان فعال با حداقل ۱ ارتقا</p><div class="chart-box"><canvas id="chart-promotion"></canvas></div></div>
+      <div class="card"><h3>استعدادهای با پتانسیل بالا به تفکیک واحد</h3><div class="chart-box"><canvas id="chart-hipo"></canvas></div></div>
     </div>
   </div>
 </section>
@@ -361,14 +364,14 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <section id="planning-risk">
   <div class="wrap">
-    <div class="section-head"><h2>Workforce planning &amp; attrition risk</h2><span class="hint">Model output — see <code>Workforce_Forecast</code>, <code>Hiring_Plan</code> and <code>Attrition_Risk</code> sheets for full methodology</span></div>
+    <div class="section-head"><h2>برنامه‌ریزی نیروی انسانی و ریسک ترک خدمت</h2><span class="hint">خروجی مدل — برای روش‌شناسی کامل به برگه‌های <code>Workforce_Forecast</code>، <code>Hiring_Plan</code> و <code>Attrition_Risk</code> مراجعه کنید</span></div>
     <div class="grid-2">
-      <div class="card"><h3>12-month hiring plan</h3><p class="card-sub">Replacement hires (covering forecast attrition) + growth hires, by month</p><div class="chart-box tall"><canvas id="chart-hiring-plan"></canvas></div></div>
-      <div class="card"><h3>Attrition risk distribution</h3><div class="chart-box tall"><canvas id="chart-risk-donut"></canvas></div><div class="legend-row" id="risk-legend"></div></div>
+      <div class="card"><h3>برنامه‌ی استخدام ۱۲ ماهه</h3><p class="card-sub">استخدام جایگزین (پوشش ترک خدمت پیش‌بینی‌شده) + استخدام برای رشد، به تفکیک ماه</p><div class="chart-box tall"><canvas id="chart-hiring-plan"></canvas></div></div>
+      <div class="card"><h3>توزیع ریسک ترک خدمت</h3><div class="chart-box tall"><canvas id="chart-risk-donut"></canvas></div><div class="legend-row" id="risk-legend"></div></div>
     </div>
     <div class="grid-2b" style="margin-top:18px;">
-      <div class="card"><h3>Current vs. 12-month forecast headcount, by department</h3><div class="chart-box"><canvas id="chart-dept-forecast"></canvas></div></div>
-      <div class="card"><h3>12-month hiring plan, by department</h3><div class="chart-box"><canvas id="chart-hiring-dept"></canvas></div></div>
+      <div class="card"><h3>تعداد فعلی در برابر پیش‌بینی ۱۲ ماهه، به تفکیک واحد</h3><div class="chart-box"><canvas id="chart-dept-forecast"></canvas></div></div>
+      <div class="card"><h3>برنامه‌ی استخدام ۱۲ ماهه به تفکیک واحد</h3><div class="chart-box"><canvas id="chart-hiring-dept"></canvas></div></div>
     </div>
   </div>
 </section>
@@ -376,11 +379,11 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 <section class="tight">
   <div class="wrap">
     <div class="card">
-      <h3>Highest attrition-risk employees</h3>
-      <p class="card-sub">Top 15 active employees by risk score, with the leading contributing factors</p>
+      <h3>کارکنان با بالاترین ریسک ترک خدمت</h3>
+      <p class="card-sub">۱۵ کارمند فعال با بیشترین امتیاز ریسک، همراه با مهم‌ترین عوامل مؤثر</p>
       <div style="overflow-x:auto;">
         <table id="risk-table">
-          <thead><tr><th>Employee</th><th>Department</th><th>Job Title</th><th>Tenure (yrs)</th><th>Risk Score</th><th>Band</th><th>Top Drivers</th></tr></thead>
+          <thead><tr><th>کارمند</th><th>واحد</th><th>عنوان شغلی</th><th>سابقه (سال)</th><th>امتیاز ریسک</th><th>سطح</th><th>عوامل اصلی</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -391,18 +394,18 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 <footer>
   <div class="wrap">
     <div class="creator-box">
-      <img class="avatar" id="creator-photo" src="assets/milad-shabani.jpg" alt="Milad Shabani" onerror="this.onerror=null; this.removeAttribute('src'); this.textContent='MS';">
+      <img class="avatar" id="creator-photo" src="../assets/milad-shabani.jpg" alt="میلاد شعبانی" onerror="this.onerror=null; this.removeAttribute('src'); this.textContent='MS';">
       <div class="creator-meta">
-        <h3>Milad Shabani</h3>
-        <p>I built this entire project myself — synthetic data engine, forecasting model, Excel workbook and this dashboard, end to end.</p>
-        <p class="role">Creator · HR Analytics Dashboard for TelNova Communications</p>
+        <h3>میلاد شعبانی</h3>
+        <p>کل این پروژه را خودم و از ابتدا تا انتها ساخته‌ام — موتور داده‌ی مصنوعی، مدل پیش‌بینی، فایل اکسل و همین داشبورد.</p>
+        <p class="role">سازنده · داشبورد تحلیل منابع انسانی برای TelNova Communications</p>
       </div>
       <div class="foot-links">
         <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <p class="fineprint">All company names, employees, subscribers and figures in this project are synthetically generated for portfolio and demonstration purposes only and do not represent a real organization or real individuals. Data model, forecasts and dashboard © Milad Shabani.</p>
+    <p class="fineprint">تمام نام شرکت‌ها، کارکنان، مشترکان و اعداد این پروژه به‌صورت مصنوعی تولید شده‌اند و صرفاً برای نمونه‌کار و نمایش هستند؛ هیچ سازمان یا فرد واقعی را نمایندگی نمی‌کنند. مدل داده، پیش‌بینی‌ها و داشبورد © میلاد شعبانی.</p>
   </div>
 </footer>
 
@@ -410,15 +413,26 @@ window.TELNOVA_DATA = {"Employees":[{"EmployeeID":"TN-100001","FullName":"Glenn 
 
 <script>
 /* =====================================================================
-   TelNova HR Workforce Analytics — Dashboard Logic
+   TelNova HR Workforce Analytics — Dashboard Logic (نسخه‌ی فارسی / Persian RTL edition)
    Primary data source: window.TELNOVA_DATA, embedded at build time by
    scripts/export_dashboard_data.py (works offline, no server needed).
    Optional: "Reload live from Excel" re-parses the .xlsx directly with
    SheetJS when this page is served over http/https.
    ===================================================================== */
 
-const XLSX_URL_CANDIDATES = ["../data/HR_Analytics_Workbook.xlsx", "./HR_Analytics_Workbook.xlsx", "./data/HR_Analytics_Workbook.xlsx"];
+const XLSX_URL_CANDIDATES = ["../data/HR_Analytics_Workbook.xlsx", "../HR_Analytics_Workbook.xlsx", "./data/HR_Analytics_Workbook.xlsx", "./HR_Analytics_Workbook.xlsx"];
 const AS_OF_DATE = new Date("2026-09-01");
+
+/* ---------------- Persian (fa) localisation helpers ---------------- */
+Number.prototype.fa = function(d){ d = d||0; if(!isFinite(this)) return "—"; return this.toLocaleString("fa-IR",{minimumFractionDigits:d,maximumFractionDigits:d,useGrouping:false}); };
+const FA = {"Billing & Revenue Assurance": "صورت‌حساب و تضمین درآمد", "Customer Care & Call Center": "مراقبت از مشتری و مرکز تماس", "Data & Cybersecurity": "داده و امنیت سایبری", "Field Operations & Installation": "عملیات میدانی و نصب", "Finance & Accounting": "مالی و حسابداری", "Human Resources": "منابع انسانی", "IT & Software Engineering": "فناوری اطلاعات و مهندسی نرم‌افزار", "Legal & Regulatory Affairs": "حقوقی و امور مقررات", "Marketing & Brand": "بازاریابی و برند", "Network Engineering & Ops": "مهندسی و عملیات شبکه", "Procurement & Supply Chain": "تدارکات و زنجیره‌ی تأمین", "Sales & Business Development": "فروش و توسعه‌ی کسب‌وکار", "Female": "زن", "Male": "مرد", "Bachelor's Degree": "کارشناسی", "Diploma / Vocational": "کاردانی / فنی‌وحرفه‌ای", "High School": "دیپلم متوسطه", "Master's Degree": "کارشناسی ارشد", "PhD": "دکتری", "Field / On-site": "میدانی / در محل", "Headquarters - Capital City": "دفتر مرکزی - پایتخت", "Regional Office - East": "دفتر منطقه‌ای - شرق", "Regional Office - North": "دفتر منطقه‌ای - شمال", "Regional Office - South": "دفتر منطقه‌ای - جنوب", "Remote": "دورکار", "Full-time": "تمام‌وقت", "Part-time": "پاره‌وقت", "Contract": "قراردادی", "Attendance Issues": "مشکلات حضور و غیاب", "Better Compensation Elsewhere": "دریافت حقوق بهتر در جای دیگر", "Career Growth Opportunity": "فرصت رشد شغلی", "End of Contract": "پایان قرارداد", "Further Education": "ادامه‌ی تحصیل", "Health Reasons": "دلایل سلامتی", "Performance Management": "مدیریت عملکرد", "Policy Violation": "تخلف از مقررات", "Relocation": "جابه‌جایی محل سکونت", "Restructuring / Redundancy": "تجدید ساختار / مازاد نیرو", "Retirement": "بازنشستگی", "Undisclosed": "اعلام‌نشده", "Work-Life Balance": "تعادل کار و زندگی", "Company Career Site": "وب‌سایت کاریابی شرکت", "Employee Referral": "معرفی کارکنان", "Job Board": "وب‌سایت‌های کاریابی", "LinkedIn": "لینکدین", "Recruitment Agency": "آژانس استخدام", "University Fair": "نمایشگاه دانشگاهی", "Compliance": "انطباق و مقررات", "Culture": "فرهنگ سازمانی", "Leadership": "رهبری", "Professional Development": "توسعه‌ی حرفه‌ای", "Safety": "ایمنی", "Sales": "فروش", "Soft Skills": "مهارت‌های نرم", "Technical": "فنی", "Critical": "بحرانی", "High": "زیاد", "Medium": "متوسط", "Low": "کم", "Below-average performance rating": "امتیاز عملکرد زیر میانگین", "Elevated absenteeism": "غیبت بالا", "High overtime load": "اضافه‌کاری زیاد", "Low engagement score": "امتیاز مشارکت پایین", "Low training investment": "سرمایه‌گذاری آموزشی کم", "No promotion despite tenure": "نبود ارتقا با وجود سابقه‌ی کار", "Pay below market benchmark": "حقوق کمتر از معیار بازار", "Account Manager": "مدیر حساب", "Accountant": "حسابدار", "B2B Sales Specialist": "کارشناس فروش B2B", "Billing & RA Manager": "مدیر صورت‌حساب و تضمین درآمد", "Billing Analyst": "تحلیلگر صورت‌حساب", "Billing Systems Analyst": "تحلیلگر سیستم‌های صورت‌حساب", "Brand Manager": "مدیر برند", "CTO": "مدیر ارشد فناوری (CTO)", "Call Center Agent": "اپراتور مرکز تماس", "Channel Partner Manager": "مدیر شرکای کانال فروش", "Chief Financial Officer": "مدیر ارشد مالی", "Chief Human Resources Officer": "مدیر ارشد منابع انسانی", "Collections Officer": "مسئول وصول مطالبات", "Compensation Analyst": "تحلیلگر جبران خدمات", "Compliance Officer": "مسئول انطباق", "Content Strategist": "استراتژیست محتوا", "Core Network Engineer": "مهندس شبکه‌ی هسته", "Customer Care Manager": "مدیر مراقبت از مشتری", "Customer Retention Specialist": "کارشناس حفظ مشتری", "Cybersecurity Engineer": "مهندس امنیت سایبری", "Data Analyst": "تحلیلگر داده", "Data Engineer": "مهندس داده", "Data Scientist": "دانشمند داده", "DevOps Engineer": "مهندس دوآپس", "Digital Marketing Analyst": "تحلیلگر بازاریابی دیجیتال", "Engineering Manager": "مدیر مهندسی", "FP&A Analyst": "تحلیلگر برنامه‌ریزی و تحلیل مالی", "Fiber Splicing Technician": "تکنسین جوش فیبر نوری", "Field Operations Manager": "مدیر عملیات میدانی", "Field Supervisor": "سرپرست میدانی", "Finance Manager": "مدیر مالی", "Financial Analyst": "تحلیلگر مالی", "Fleet & Logistics Coordinator": "هماهنگ‌کننده‌ی ناوگان و لجستیک", "HR Business Partner": "شریک کسب‌وکار منابع انسانی", "HR Generalist": "کارشناس عمومی منابع انسانی", "HR Manager": "مدیر منابع انسانی", "Head of Customer Experience": "رئیس تجربه‌ی مشتری", "Head of Data & Security": "رئیس داده و امنیت", "Head of Engineering": "رئیس مهندسی", "Head of Field Operations": "رئیس عملیات میدانی", "Head of Legal": "رئیس امور حقوقی", "Head of Marketing": "رئیس بازاریابی", "Head of Network Engineering": "رئیس مهندسی شبکه", "Head of Sales": "رئیس فروش", "Information Security Manager": "مدیر امنیت اطلاعات", "Installation Technician": "تکنسین نصب", "L&D Specialist": "کارشناس یادگیری و توسعه", "Legal Counsel": "مشاور حقوقی", "Marketing Manager": "مدیر بازاریابی", "Marketing Specialist": "کارشناس بازاریابی", "NOC Engineer": "مهندس مرکز عملیات شبکه (NOC)", "Network Operations Manager": "مدیر عملیات شبکه", "Network Planning Engineer": "مهندس طراحی و برنامه‌ریزی شبکه", "Payroll Specialist": "کارشناس حقوق و دستمزد", "Procurement Manager": "مدیر تدارکات", "Procurement Officer": "مسئول تدارکات", "QA Analyst - Care": "تحلیلگر کنترل کیفیت - مراقبت از مشتری", "QA Engineer": "مهندس تضمین کیفیت", "RF Engineer": "مهندس فرکانس رادیویی (RF)", "Regional Sales Manager": "مدیر فروش منطقه‌ای", "Regulatory Affairs Specialist": "کارشناس امور مقررات", "Revenue Assurance Specialist": "کارشناس تضمین درآمد", "SOC Analyst": "تحلیلگر مرکز عملیات امنیت (SOC)", "Sales Executive": "کارشناس اجرایی فروش", "Sales Team Lead": "سرپرست تیم فروش", "Senior Field Technician": "تکنسین ارشد میدانی", "Senior Network Architect": "معمار ارشد شبکه", "Senior Software Engineer": "مهندس ارشد نرم‌افزار", "Senior Support Agent": "کارشناس ارشد پشتیبانی", "Software Engineer": "مهندس نرم‌افزار", "Supply Chain Analyst": "تحلیلگر زنجیره‌ی تأمین", "Talent Acquisition Specialist": "کارشناس جذب استعداد", "Team Lead - Customer Care": "سرپرست تیم - مراقبت از مشتری", "Technical Support Specialist": "کارشناس پشتیبانی فنی", "Vendor Manager": "مدیر تأمین‌کنندگان"};
+function tr(s){ return (s!=null && FA[s]) ? FA[s] : s; }
+function trDrivers(str){ return String(str||"").split(" & ").map(tr).join(" و "); }
+function fmtQ(q){ const m = /^(\d{4})-Q(\d)$/.exec(q||""); if(!m) return q; return "فصل " + Number(m[2]).fa(0) + " " + Number(m[1]).fa(0); }
+Chart.defaults.locale = "fa-IR";
+Chart.defaults.plugins.legend.rtl = true; Chart.defaults.plugins.legend.textDirection = "rtl";
+Chart.defaults.plugins.tooltip.rtl = true; Chart.defaults.plugins.tooltip.textDirection = "rtl";
+
 
 const PALETTE = {
   teal:"#0E7C7B", tealDark:"#0A5F5E", ink:"#10203D", inkSoft:"#4C5B75",
@@ -427,7 +441,7 @@ const PALETTE = {
 };
 const DEPT_COLORS = ["#0E7C7B","#E8743B","#3E5C89","#D9A32B","#7A5CC0","#2E9E5B","#C0577A","#4FA8C9","#9C7B4F","#6B7FD7","#B0575B","#5FA98A"];
 
-Chart.defaults.font.family = "'Inter', system-ui, sans-serif";
+Chart.defaults.font.family = "'Vazirmatn', Tahoma, 'Segoe UI', sans-serif";
 Chart.defaults.font.size = 11.3;
 Chart.defaults.color = PALETTE.inkSoft;
 Chart.defaults.plugins.legend.labels.usePointStyle = true;
@@ -448,13 +462,13 @@ function boot(){
     setStatus("ok");
   } else {
     setStatus("err");
-    showError({message:"data.js was not found or did not load. Make sure data.js sits next to index.html (regenerate with: python scripts/build_all.py)."});
+    showError({message:"داده‌ها پیدا نشد یا بارگذاری نشد. مطمئن شوید که data.js کنار index.html قرار دارد (بازسازی با: python scripts/build_all.py)."});
   }
 }
 
 async function reloadLive(){
   const btn = document.getElementById("reload-live-btn");
-  btn.disabled = true; btn.textContent = "Reloading…";
+  btn.disabled = true; btn.textContent = "در حال بازخوانی…";
   try{
     let buf = null, lastErr = null;
     for(const url of XLSX_URL_CANDIDATES){
@@ -463,18 +477,18 @@ async function reloadLive(){
         if(res.ok){ buf = await res.arrayBuffer(); break; }
       }catch(e){ lastErr = e; }
     }
-    if(!buf) throw (lastErr || new Error("Workbook not reachable at any known relative path."));
+    if(!buf) throw (lastErr || new Error("فایل اکسل در هیچ‌یک از مسیرهای نسبی شناخته‌شده در دسترس نیست."));
     const wb = XLSX.read(buf, {type:"array", cellDates:true});
     loadFromWorkbook(wb);
     populateDeptFilter();
     renderAll();
     setStatus("live");
-    showToast("Reloaded live from HR_Analytics_Workbook.xlsx");
+    showToast("داده‌ها به‌صورت زنده از HR_Analytics_Workbook.xlsx بازخوانی شد");
   }catch(err){
     console.error(err);
-    showToast("Could not reload live (needs http/https, e.g. a local server or GitHub Pages).");
+    showToast("بازخوانی زنده ممکن نشد (نیازمند http/https است، مثلاً یک سرور محلی یا GitHub Pages).");
   }finally{
-    btn.disabled = false; btn.textContent = "↻ Reload live from Excel";
+    btn.disabled = false; btn.textContent = "↻ بازخوانی زنده از اکسل";
   }
 }
 
@@ -548,8 +562,8 @@ function loadFromWorkbook(wb){
 function populateDeptFilter(){
   const depts = [...new Set(ACTIVE.map(e => e.Department))].sort();
   const sel = document.getElementById("dept-filter");
-  sel.innerHTML = '<option value="__ALL__">All departments</option>';
-  depts.forEach(d => { const opt = document.createElement("option"); opt.value=d; opt.textContent=d; sel.appendChild(opt); });
+  sel.innerHTML = '<option value="__ALL__">همه‌ی واحدها</option>';
+  depts.forEach(d => { const opt = document.createElement("option"); opt.value=d; opt.textContent=tr(d); sel.appendChild(opt); });
   sel.value = currentDept;
   sel.onchange = () => { currentDept = sel.value; renderAll(); };
 }
@@ -557,13 +571,13 @@ function populateDeptFilter(){
 function setStatus(state){
   const pill = document.getElementById("status-pill"); const txt = document.getElementById("status-text");
   pill.classList.remove("ok","err","live");
-  if(state === "ok"){ pill.classList.add("ok"); txt.textContent = "Loaded (build-time snapshot)"; }
-  if(state === "live"){ pill.classList.add("live"); txt.textContent = "Live from Excel"; }
-  if(state === "err"){ pill.classList.add("err"); txt.textContent = "Failed to load data"; }
+  if(state === "ok"){ pill.classList.add("ok"); txt.textContent = "بارگذاری شد (نسخه‌ی ثابت زمان ساخت)"; }
+  if(state === "live"){ pill.classList.add("live"); txt.textContent = "زنده از اکسل"; }
+  if(state === "err"){ pill.classList.add("err"); txt.textContent = "بارگذاری داده ناموفق بود"; }
 }
 function showError(err){
   const box = document.getElementById("error-box"); box.style.display = "block";
-  box.innerHTML = `<strong>The dashboard could not load its data.</strong><br>${(err&&err.message)||err}`;
+  box.innerHTML = `<strong>داشبورد نتوانست داده‌های خود را بارگذاری کند.</strong><br>${(err&&err.message)||err}`;
 }
 function showToast(msg){
   const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show");
@@ -622,23 +636,24 @@ function renderAll(){
 }
 
 function renderHero(){
-  document.getElementById("hero-subscribers").textContent = "1,047,500";
+  document.getElementById("hero-subscribers").textContent = (1047500).toLocaleString("fa-IR");
   const lastMonth = MONTHLY_TREND[MONTHLY_TREND.length - 1];
   const asOf = lastMonth ? fmtMonth(lastMonth.Month) : "—";
-  document.getElementById("hero-asof").textContent = `As of ${asOf} · ${ACTIVE.length.toLocaleString()} active employees`;
+  document.getElementById("hero-asof").textContent = `تا ${asOf} · ${ACTIVE.length.toLocaleString("fa-IR")} کارمند فعال`;
 }
 
 /* ---------------------------- Executive summary ---------------------------- */
 function renderInsights(){
   const grid = document.getElementById("insight-grid");
   const cards = [];
+  const nf = (n)=>Math.round(n).toLocaleString("fa-IR");
 
   // 1. Headcount forecast direction
   const startHC = ACTIVE.length;
   const endHC = COMPANY_FORECAST.length ? COMPANY_FORECAST[COMPANY_FORECAST.length-1].ForecastHeadcount_Blended : startHC;
   const hcChangePct = ((endHC - startHC) / startHC) * 100;
-  cards.push({tag:"Workforce plan", cls: hcChangePct >= 0 ? "good" : "warn",
-    html:`Headcount is forecast to <strong>${hcChangePct>=0?'grow':'shrink'} ${Math.abs(hcChangePct).toFixed(1)}%</strong> over the next 12 months, from ${startHC.toLocaleString()} to ~${endHC.toLocaleString()} employees.`});
+  cards.push({tag:"برنامه‌ریزی نیرو", cls: hcChangePct >= 0 ? "good" : "warn",
+    html:`طی ۱۲ ماه آینده تعداد نیروی انسانی <strong>${Math.abs(hcChangePct).fa(1)}٪ ${hcChangePct>=0?'رشد':'کاهش'}</strong> پیش‌بینی می‌شود؛ از ${nf(startHC)} به حدود ${nf(endHC)} نفر.`});
 
   // 2. Highest-risk department
   const riskByDept = {};
@@ -646,8 +661,8 @@ function renderInsights(){
   let worstDept = null, worstAvg = -1;
   Object.entries(riskByDept).forEach(([d, arr]) => { const a = avg(arr); if(a > worstAvg){ worstAvg = a; worstDept = d; } });
   const criticalCount = RISK_SCORES.filter(r=>r.RiskBand==="Critical").length;
-  cards.push({tag:"Attrition risk", cls:"alert",
-    html:`<strong>${worstDept}</strong> has the highest average attrition-risk score (${worstAvg.toFixed(0)}/100). ${criticalCount} active employees are currently flagged <strong>Critical</strong> risk company-wide.`});
+  cards.push({tag:"ریسک ترک خدمت", cls:"alert",
+    html:`واحد <strong>${tr(worstDept)}</strong> بالاترین میانگین امتیاز ریسک ترک خدمت را دارد (${worstAvg.fa(0)} از ۱۰۰). در حال حاضر ${nf(criticalCount)} کارمند فعال در سراسر شرکت در سطح ریسک <strong>بحرانی</strong> قرار دارند.`});
 
   // 3. eNPS trend
   const companyEng = ENGAGEMENT_AGG.filter(e=>e.Department==="__ALL__").sort((a,b)=>a.SurveyQuarter.localeCompare(b.SurveyQuarter));
@@ -655,39 +670,39 @@ function renderInsights(){
     const last = companyEng[companyEng.length-1], prev = companyEng[companyEng.length-2];
     const delta = last.eNPS_Response - prev.eNPS_Response;
     const deltaAbs = Math.abs(delta);
-    const trendPhrase = deltaAbs < 1 ? "roughly flat versus last quarter" : `${delta > 0 ? "up" : "down"} ${deltaAbs.toFixed(0)} points quarter-over-quarter`;
-    cards.push({tag:"Engagement", cls: delta >= 0 ? "good" : "warn",
-      html:`Employee NPS is <strong>${last.eNPS_Response.toFixed(0)}</strong> this quarter, ${trendPhrase}.`});
+    const trendPhrase = deltaAbs < 1 ? "تقریباً بدون تغییر نسبت به فصل قبل" : `${deltaAbs.fa(0)} امتیاز ${delta > 0 ? "افزایش" : "کاهش"} نسبت به فصل قبل`;
+    cards.push({tag:"مشارکت", cls: delta >= 0 ? "good" : "warn",
+      html:`شاخص خالص ترویج‌کنندگی کارکنان (eNPS) در این فصل <strong>${last.eNPS_Response.fa(0)}</strong> است؛ ${trendPhrase}.`});
   }
 
   // 4. Gender diversity
   const femaleShare = ACTIVE.filter(e=>e.Gender==="Female").length / ACTIVE.length;
-  cards.push({tag:"Diversity", cls:"", html:`Women make up <strong>${(femaleShare*100).toFixed(0)}%</strong> of the active workforce, ranging from field-heavy roles to a majority-female Customer Care organization.`});
+  cards.push({tag:"تنوع", cls:"", html:`زنان <strong>${(femaleShare*100).fa(0)}٪</strong> از نیروی کار فعال را تشکیل می‌دهند؛ این سهم از نقش‌های عمدتاً میدانی تا واحد مراقبت از مشتری با اکثریت زن متفاوت است.`});
 
   // 5. Hiring plan total
   const totalPlannedHires = sum(HIRING_PLAN.map(r=>r.PlannedHires));
-  cards.push({tag:"Talent acquisition", cls:"", html:`The 12-month workforce plan calls for approximately <strong>${Math.round(totalPlannedHires).toLocaleString()} hires</strong> company-wide to cover forecast attrition and planned growth.`});
+  cards.push({tag:"جذب استعداد", cls:"", html:`برنامه‌ی نیروی انسانی ۱۲ ماهه حدود <strong>${nf(totalPlannedHires)} استخدام</strong> در سراسر شرکت را برای پوشش ترک خدمت پیش‌بینی‌شده و رشد برنامه‌ریزی‌شده در نظر گرفته است.`});
 
   // 6. Top departure reason
   const terms = EMPLOYEES.filter(e=>e.Status==="Terminated" && e.TerminationReason);
   const reasonCounts = countBy(terms, "TerminationReason");
   const topReason = Object.entries(reasonCounts).sort((a,b)=>b[1]-a[1])[0];
   if(topReason){
-    cards.push({tag:"Retention", cls:"", html:`<strong>${topReason[0]}</strong> is the most common reason employees have left, accounting for ${((topReason[1]/terms.length)*100).toFixed(0)}% of all departures.`});
+    cards.push({tag:"ماندگاری", cls:"", html:`<strong>${tr(topReason[0])}</strong> رایج‌ترین دلیل خروج کارکنان است و ${((topReason[1]/terms.length)*100).fa(0)}٪ از کل خروج‌ها را شامل می‌شود.`});
   }
 
   grid.innerHTML = cards.map(c => `<div class="insight-card ${c.cls}"><div class="i-tag">${c.tag}</div><p>${c.html}</p></div>`).join("");
 }
 
-function fmtMonth(d){ const dt = (d instanceof Date) ? d : new Date(d); if(isNaN(dt)) return String(d); return dt.toLocaleDateString("en-US", {month:"short", year:"numeric"}); }
-function pct(n, digits=1){ return (n*100).toFixed(digits) + "%"; }
-function usd(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+function fmtMonth(d){ const dt = (d instanceof Date) ? d : new Date(d); if(isNaN(dt)) return String(d); return dt.toLocaleDateString("fa-IR-u-ca-gregory", {month:"short", year:"numeric"}); }
+function pct(n, digits=1){ return (n*100).fa(digits) + "٪"; }
+function usd(n){ return Math.round(n).toLocaleString("fa-IR") + " دلار"; }
 function avg(arr){ const a = (arr||[]).filter(v=>v!=null && !isNaN(v)); return a.length ? sum(a)/a.length : 0; }
 function sum(arr){ return (arr||[]).reduce((s,v)=>s+(Number(v)||0), 0); }
 function countBy(arr, key){ return arr.reduce((acc, row) => { const k = row[key] ?? "Unknown"; acc[k] = (acc[k]||0)+1; return acc; }, {}); }
 function destroy(id){ if(charts[id]){ charts[id].destroy(); delete charts[id]; } }
 function hexAlpha(hex, a){ const c = hex.replace('#',''); const r=parseInt(c.substring(0,2),16), g=parseInt(c.substring(2,4),16), b=parseInt(c.substring(4,6),16); return `rgba(${r},${g},${b},${a})`; }
-function wrapLabel(s, truncate=true){ if(!s) return s; return truncate && s.length > 24 ? s.slice(0,22)+"…" : s; }
+function wrapLabel(s, truncate=true){ if(!s) return s; s = tr(s); return truncate && s.length > 40 ? s.slice(0,38)+"…" : s; }
 function ageOf(birthDateStr){ if(!birthDateStr) return null; const bd = new Date(birthDateStr); if(isNaN(bd)) return null; let age = AS_OF_DATE.getFullYear() - bd.getFullYear(); const m = AS_OF_DATE.getMonth() - bd.getMonth(); if(m < 0 || (m===0 && AS_OF_DATE.getDate() < bd.getDate())) age--; return age; }
 
 /* ---------------------------- KPI cards ---------------------------- */
@@ -715,28 +730,28 @@ function renderKPIs(){
   const promoRate = ACTIVE.filter(e=>e.PromotionsCount>0).length / totalActive;
 
   const categories = [
-    ["Workforce & Diversity", [
-      ["Active headcount", totalActive.toLocaleString(), "Across 12 functions"],
-      ["Lifetime attrition rate", pct(attritionAll), "All-time, since 2011"],
-      ["Avg. tenure (active)", avgTenure.toFixed(1) + " yrs", ""],
-      ["Gender diversity", pct(femaleShare), "Female share, active"],
-      ["High-potential talent", hipoCount.toString(), pct(hipoCount/totalActive)+" of workforce"],
-      ["Employees / 1,000 subscribers", empPer1000Subs.toFixed(2), "Efficiency ratio"],
+    ["نیروی انسانی و تنوع", [
+      ["تعداد نیروی فعال", totalActive.toLocaleString("fa-IR"), "در ۱۲ واحد سازمانی"],
+      ["نرخ ترک خدمت (کل دوره)", pct(attritionAll), "از سال ۲۰۱۱ تاکنون"],
+      ["میانگین سابقه‌ی کار (فعال)", avgTenure.fa(1) + " سال", ""],
+      ["تنوع جنسیتی", pct(femaleShare), "سهم زنان در نیروی فعال"],
+      ["استعدادهای با پتانسیل بالا", hipoCount.toLocaleString("fa-IR"), pct(hipoCount/totalActive)+" از نیروی کار"],
+      ["کارمند به‌ازای هر ۱٬۰۰۰ مشترک", empPer1000Subs.fa(2), "نسبت کارایی"],
     ]],
-    ["Talent Acquisition", [
-      ["Open requisitions", openReqs.toString(), "Currently recruiting"],
-      ["Avg. time to fill", avgTTF.toFixed(0) + " days", ""],
-      ["Avg. cost per hire", usd(avgCPH), ""],
-      ["Total recruiting spend", usd(totalRecruitSpend), "Trailing 24 months"],
-      ["Offer acceptance rate", pct(offerAccept), ""],
+    ["جذب استعداد", [
+      ["درخواست‌های استخدام باز", openReqs.toLocaleString("fa-IR"), "در حال جذب"],
+      ["میانگین زمان تکمیل", avgTTF.fa(0) + " روز", ""],
+      ["میانگین هزینه‌ی هر استخدام", usd(avgCPH), ""],
+      ["کل هزینه‌ی جذب", usd(totalRecruitSpend), "۲۴ ماه گذشته"],
+      ["نرخ پذیرش پیشنهاد کار", pct(offerAccept), ""],
     ]],
-    ["Engagement, Compensation & Learning", [
-      ["Employee NPS", enps.toFixed(0), "Latest quarter"],
-      ["Avg. engagement score", avgEngagement.toFixed(2) + " / 5", ""],
-      ["Avg. compa-ratio", avgCompaRatio.toFixed(2), "Salary vs. market"],
-      ["Training hours / employee", trainHrsPerEmp.toFixed(1), "Year to date"],
-      ["Total training investment", usd(totalTrainCost), ""],
-      ["Promotion rate", pct(promoRate), "Active workforce"],
+    ["مشارکت، جبران خدمات و یادگیری", [
+      ["شاخص eNPS", enps.fa(0), "آخرین فصل"],
+      ["میانگین امتیاز مشارکت", avgEngagement.fa(2) + " از ۵", ""],
+      ["میانگین نسبت کامپا", avgCompaRatio.fa(2), "حقوق در مقایسه با بازار"],
+      ["ساعت آموزش به‌ازای هر کارمند", trainHrsPerEmp.fa(1), "از ابتدای سال تاکنون"],
+      ["کل سرمایه‌گذاری آموزشی", usd(totalTrainCost), ""],
+      ["نرخ ارتقا", pct(promoRate), "نیروی فعال"],
     ]],
   ];
 
@@ -758,16 +773,16 @@ function renderHeadcountChart(){
   const actualSeries = [...histData, ...Array(fcData.length).fill(null)];
   const forecastSeries = [...Array(histData.length - 1).fill(null), histData[histData.length-1], ...fcData];
   renderLineChart("chart-headcount", labels, [
-    {label:"Actual headcount", data:actualSeries, borderColor:PALETTE.teal, backgroundColor:hexAlpha(PALETTE.teal,0.08), fill:true, tension:.3, pointRadius:0, borderWidth:2.5},
-    {label:"Forecast (blended trend + growth target)", data:forecastSeries, borderColor:PALETTE.orange, borderDash:[6,4], fill:false, tension:.3, pointRadius:0, borderWidth:2.5},
-  ], {y:{title:"Employees"}});
+    {label:"تعداد واقعی نیرو", data:actualSeries, borderColor:PALETTE.teal, backgroundColor:hexAlpha(PALETTE.teal,0.08), fill:true, tension:.3, pointRadius:0, borderWidth:2.5},
+    {label:"پیش‌بینی (ترکیب روند و هدف رشد)", data:forecastSeries, borderColor:PALETTE.orange, borderDash:[6,4], fill:false, tension:.3, pointRadius:0, borderWidth:2.5},
+  ], {y:{title:"نفر"}});
 }
 function renderAttritionForecastChart(){
   const labels = ATTRITION_FORECAST.map(r => fmtMonth(r.Month));
   const data = ATTRITION_FORECAST.map(r => (r.ForecastMonthlyAttritionRate||0)*100);
   renderLineChart("chart-attrition-forecast", labels, [
-    {label:"Forecast monthly attrition rate (%)", data, borderColor:PALETTE.red, backgroundColor:hexAlpha(PALETTE.red,0.08), fill:true, tension:.35, pointRadius:2, borderWidth:2.5},
-  ], {y:{title:"% per month"}});
+    {label:"پیش‌بینی نرخ ماهانه‌ی ترک خدمت (٪)", data, borderColor:PALETTE.red, backgroundColor:hexAlpha(PALETTE.red,0.08), fill:true, tension:.35, pointRadius:2, borderWidth:2.5},
+  ], {y:{title:"درصد در ماه"}});
 }
 function renderLineChart(canvasId, labels, datasets, axis={}){
   destroy(canvasId);
@@ -795,15 +810,15 @@ function renderGenderChart(filtered){
   const counts = countBy(filtered.length?filtered:ACTIVE, "Gender");
   destroy("chart-gender");
   charts["chart-gender"] = new Chart(document.getElementById("chart-gender"), {
-    type:"doughnut", data:{labels:Object.keys(counts), datasets:[{data:Object.values(counts), backgroundColor:[PALETTE.teal, PALETTE.orange, PALETTE.slate], borderWidth:0}]},
+    type:"doughnut", data:{labels:Object.keys(counts).map(tr), datasets:[{data:Object.values(counts), backgroundColor:[PALETTE.teal, PALETTE.orange, PALETTE.slate], borderWidth:0}]},
     options:{responsive:true, maintainAspectRatio:false, cutout:"64%", plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}}}
   });
 }
 function renderAgeChart(filtered){
   const rows = filtered.length ? filtered : ACTIVE;
-  const bands = {"<25":0,"25-34":0,"35-44":0,"45-54":0,"55+":0};
+  const bands = {"زیر ۲۵":0,"۲۵ تا ۳۴":0,"۳۵ تا ۴۴":0,"۴۵ تا ۵۴":0,"۵۵ به بالا":0};
   rows.forEach(e => { const a = ageOf(e.BirthDate); if(a==null) return;
-    if(a<25) bands["<25"]++; else if(a<35) bands["25-34"]++; else if(a<45) bands["35-44"]++; else if(a<55) bands["45-54"]++; else bands["55+"]++; });
+    if(a<25) bands["زیر ۲۵"]++; else if(a<35) bands["۲۵ تا ۳۴"]++; else if(a<45) bands["۳۵ تا ۴۴"]++; else if(a<55) bands["۴۵ تا ۵۴"]++; else bands["۵۵ به بالا"]++; });
   destroy("chart-age");
   charts["chart-age"] = new Chart(document.getElementById("chart-age"), {
     type:"bar", data:{labels:Object.keys(bands), datasets:[{data:Object.values(bands), backgroundColor:PALETTE.purple, borderRadius:6, maxBarThickness:38}]},
@@ -813,9 +828,9 @@ function renderAgeChart(filtered){
 }
 function renderTenureDistChart(filtered){
   const rows = filtered.length ? filtered : ACTIVE;
-  const bands = {"0-1 yr":0,"1-3 yrs":0,"3-5 yrs":0,"5-10 yrs":0,"10+ yrs":0};
+  const bands = {"کمتر از ۱ سال":0,"۱ تا ۳ سال":0,"۳ تا ۵ سال":0,"۵ تا ۱۰ سال":0,"۱۰ سال به بالا":0};
   rows.forEach(e => { const t = e.TenureYears;
-    if(t<1) bands["0-1 yr"]++; else if(t<3) bands["1-3 yrs"]++; else if(t<5) bands["3-5 yrs"]++; else if(t<10) bands["5-10 yrs"]++; else bands["10+ yrs"]++; });
+    if(t<1) bands["کمتر از ۱ سال"]++; else if(t<3) bands["۱ تا ۳ سال"]++; else if(t<5) bands["۳ تا ۵ سال"]++; else if(t<10) bands["۵ تا ۱۰ سال"]++; else bands["۱۰ سال به بالا"]++; });
   destroy("chart-tenure-dist");
   charts["chart-tenure-dist"] = new Chart(document.getElementById("chart-tenure-dist"), {
     type:"bar", data:{labels:Object.keys(bands), datasets:[{data:Object.values(bands), backgroundColor:PALETTE.teal, borderRadius:6, maxBarThickness:32}]},
@@ -828,7 +843,7 @@ function renderEducationChart(filtered){
   const counts = countBy(rows, "Education");
   destroy("chart-education");
   charts["chart-education"] = new Chart(document.getElementById("chart-education"), {
-    type:"pie", data:{labels:Object.keys(counts), datasets:[{data:Object.values(counts), backgroundColor:DEPT_COLORS, borderWidth:0}]},
+    type:"pie", data:{labels:Object.keys(counts).map(tr), datasets:[{data:Object.values(counts), backgroundColor:DEPT_COLORS, borderWidth:0}]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom", labels:{font:{size:10.5}}}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}}}
   });
 }
@@ -847,9 +862,9 @@ function renderWorkLocationChart(filtered){
 const LEVEL_ORDER = ["L1 - Associate","L2 - Professional","L3 - Senior","L4 - Lead / Supervisor","L5 - Manager","L6 - Senior Manager","L7 - Director","L8 - VP","L9 - Executive (C-level)"];
 function renderCompaRatioChart(filtered){
   const rows = (filtered.length ? filtered : ACTIVE).filter(e=>e.CompaRatio!=null);
-  const bins = {"<0.85":0,"0.85-0.95":0,"0.95-1.05":0,"1.05-1.15":0,"1.15+":0};
+  const bins = {"کمتر از ۰٫۸۵":0,"۰٫۸۵ تا ۰٫۹۵":0,"۰٫۹۵ تا ۱٫۰۵":0,"۱٫۰۵ تا ۱٫۱۵":0,"۱٫۱۵ به بالا":0};
   rows.forEach(e => { const c = e.CompaRatio;
-    if(c<0.85) bins["<0.85"]++; else if(c<0.95) bins["0.85-0.95"]++; else if(c<1.05) bins["0.95-1.05"]++; else if(c<1.15) bins["1.05-1.15"]++; else bins["1.15+"]++; });
+    if(c<0.85) bins["کمتر از ۰٫۸۵"]++; else if(c<0.95) bins["۰٫۸۵ تا ۰٫۹۵"]++; else if(c<1.05) bins["۰٫۹۵ تا ۱٫۰۵"]++; else if(c<1.15) bins["۱٫۰۵ تا ۱٫۱۵"]++; else bins["۱٫۱۵ به بالا"]++; });
   destroy("chart-comparatio");
   charts["chart-comparatio"] = new Chart(document.getElementById("chart-comparatio"), {
     type:"bar", data:{labels:Object.keys(bins), datasets:[{data:Object.values(bins), backgroundColor:[PALETTE.red,PALETTE.orange,PALETTE.green,PALETTE.orange,PALETTE.red], borderRadius:6, maxBarThickness:34}]},
@@ -864,8 +879,8 @@ function renderSalaryByLevelChart(filtered){
   destroy("chart-salary-level");
   charts["chart-salary-level"] = new Chart(document.getElementById("chart-salary-level"), {
     type:"bar", data:{labels:levels.map(l=>l.split(" - ")[0]), datasets:[{data, backgroundColor:PALETTE.tealDark, borderRadius:6, maxBarThickness:28}]},
-    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>usd(ctx.parsed.y)+"/yr"}}},
-      scales:{x:{grid:{display:false}}, y:{grid:{color:PALETTE.line}, ticks:{callback:(v)=>"$"+(v/1000)+"k"}}}}
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>usd(ctx.parsed.y)+" در سال"}}},
+      scales:{x:{grid:{display:false}}, y:{grid:{color:PALETTE.line}, ticks:{callback:(v)=>(v/1000).toLocaleString("fa-IR")+" هزار"}}}}
   });
 }
 function renderPayGapChart(filtered){
@@ -879,8 +894,8 @@ function renderPayGapChart(filtered){
   destroy("chart-pay-gap");
   charts["chart-pay-gap"] = new Chart(document.getElementById("chart-pay-gap"), {
     type:"bar", data:{labels:levels.map(l=>l.split(" - ")[0]), datasets:[{data:ratios, backgroundColor:ratios.map(r=>r>=98?PALETTE.green:r>=93?PALETTE.amber:PALETTE.red), borderRadius:6, maxBarThickness:28}]},
-    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>ctx.parsed.y.toFixed(1)+"% of male avg."}}},
-      scales:{x:{grid:{display:false}}, y:{grid:{color:PALETTE.line}, min:80, max:110, title:{display:true,text:"% of male avg. salary"}}}}
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>ctx.parsed.y.fa(1)+"٪ از میانگین مردان"}}},
+      scales:{x:{grid:{display:false}}, y:{grid:{color:PALETTE.line}, min:80, max:110, title:{display:true,text:"درصد از میانگین حقوق مردان"}}}}
   });
 }
 
@@ -896,8 +911,8 @@ function renderAttritionByDeptChart(){
   destroy("chart-attrition-dept");
   charts["chart-attrition-dept"] = new Chart(document.getElementById("chart-attrition-dept"), {
     type:"bar", data:{labels:order.map(o=>wrapLabel(o[0])), datasets:[{data:order.map(o=>o[1]), backgroundColor:PALETTE.red, borderRadius:5, maxBarThickness:16}]},
-    options:{indexAxis:"y", responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>ctx.parsed.x.toFixed(1)+"%"}}},
-      scales:{x:{grid:{color:PALETTE.line}, title:{display:true,text:"All-time attrition rate (%)"}}, y:{grid:{display:false}, ticks:{font:{size:9.5}}}}}
+    options:{indexAxis:"y", responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>ctx.parsed.x.fa(1)+"٪"}}},
+      scales:{x:{grid:{color:PALETTE.line}, title:{display:true,text:"نرخ ترک خدمت در کل دوره (٪)"}}, y:{grid:{display:false}, ticks:{font:{size:9.5}}}}}
   });
 }
 function renderVolInvolChart(){
@@ -907,8 +922,8 @@ function renderVolInvolChart(){
   destroy("chart-vol-invol");
   charts["chart-vol-invol"] = new Chart(document.getElementById("chart-vol-invol"), {
     type:"bar", data:{labels:depts.map(d=>wrapLabel(d)), datasets:[
-      {label:"Voluntary", data:vol, backgroundColor:PALETTE.orange, stack:"s", borderRadius:4, maxBarThickness:22},
-      {label:"Involuntary", data:invol, backgroundColor:PALETTE.slate, stack:"s", borderRadius:4, maxBarThickness:22},
+      {label:"داوطلبانه", data:vol, backgroundColor:PALETTE.orange, stack:"s", borderRadius:4, maxBarThickness:22},
+      {label:"اجباری", data:invol, backgroundColor:PALETTE.slate, stack:"s", borderRadius:4, maxBarThickness:22},
     ]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
       scales:{x:{stacked:true, grid:{display:false}, ticks:{font:{size:9}, maxRotation:30}}, y:{stacked:true, grid:{color:PALETTE.line}}}}
@@ -927,8 +942,8 @@ function renderTermReasonsChart(){
 }
 function renderTenureAtExitChart(){
   const terms = EMPLOYEES.filter(e=>e.Status==="Terminated");
-  const bands = {"<1 yr":0,"1-3 yrs":0,"3-5 yrs":0,"5-10 yrs":0,"10+ yrs":0};
-  terms.forEach(e => { const t=e.TenureYears; if(t<1) bands["<1 yr"]++; else if(t<3) bands["1-3 yrs"]++; else if(t<5) bands["3-5 yrs"]++; else if(t<10) bands["5-10 yrs"]++; else bands["10+ yrs"]++; });
+  const bands = {"کمتر از ۱ سال":0,"۱ تا ۳ سال":0,"۳ تا ۵ سال":0,"۵ تا ۱۰ سال":0,"۱۰ سال به بالا":0};
+  terms.forEach(e => { const t=e.TenureYears; if(t<1) bands["کمتر از ۱ سال"]++; else if(t<3) bands["۱ تا ۳ سال"]++; else if(t<5) bands["۳ تا ۵ سال"]++; else if(t<10) bands["۵ تا ۱۰ سال"]++; else bands["۱۰ سال به بالا"]++; });
   destroy("chart-tenure-exit");
   charts["chart-tenure-exit"] = new Chart(document.getElementById("chart-tenure-exit"), {
     type:"doughnut", data:{labels:Object.keys(bands), datasets:[{data:Object.values(bands), backgroundColor:DEPT_COLORS, borderWidth:0}]},
@@ -939,7 +954,7 @@ function renderTenureAtExitChart(){
 /* ---------------------- Talent acquisition ---------------------- */
 function renderFunnelChart(dept){
   const rows = dept === "__ALL__" ? RECRUITMENT : RECRUITMENT.filter(r=>r.Department===dept);
-  const totals = {Applicants:sum(rows.map(r=>r.NumApplicants||0)), Interviewed:sum(rows.map(r=>r.NumInterviewed||0)), Offered:sum(rows.map(r=>r.NumOffered||0)), Accepted:sum(rows.map(r=>r.NumAccepted||0))};
+  const totals = {"متقاضیان":sum(rows.map(r=>r.NumApplicants||0)), "مصاحبه‌شدگان":sum(rows.map(r=>r.NumInterviewed||0)), "پیشنهاد کار":sum(rows.map(r=>r.NumOffered||0)), "پذیرفته‌شدگان":sum(rows.map(r=>r.NumAccepted||0))};
   destroy("chart-funnel");
   charts["chart-funnel"] = new Chart(document.getElementById("chart-funnel"), {
     type:"bar", data:{labels:Object.keys(totals), datasets:[{data:Object.values(totals), backgroundColor:[PALETTE.slate,"#6B93B0",PALETTE.teal,PALETTE.tealDark], borderRadius:6, maxBarThickness:60}]},
@@ -954,8 +969,8 @@ function renderRecruitingDeptChart(){
   destroy("chart-recruiting-dept");
   charts["chart-recruiting-dept"] = new Chart(document.getElementById("chart-recruiting-dept"), {
     type:"bar", data:{labels:depts.map(wrapLabel), datasets:[
-      {label:"Avg. time to fill (days)", data:ttf, backgroundColor:PALETTE.teal, borderRadius:5, maxBarThickness:14},
-      {label:"Avg. cost per hire (USD ÷100)", data:cph, backgroundColor:PALETTE.orange, borderRadius:5, maxBarThickness:14},
+      {label:"میانگین زمان تکمیل (روز)", data:ttf, backgroundColor:PALETTE.teal, borderRadius:5, maxBarThickness:14},
+      {label:"میانگین هزینه‌ی هر استخدام (دلار ÷۱۰۰)", data:cph, backgroundColor:PALETTE.orange, borderRadius:5, maxBarThickness:14},
     ]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
       scales:{x:{grid:{display:false}, ticks:{font:{size:9}, maxRotation:30}}, y:{grid:{color:PALETTE.line}}}}
@@ -969,9 +984,9 @@ function renderSourceChart(){
   destroy("chart-source");
   charts["chart-source"] = new Chart(document.getElementById("chart-source"), {
     type:"bar", data:{labels:sources.map(wrapLabel), datasets:[
-      {label:"Hires produced", data:hires, backgroundColor:PALETTE.teal, yAxisID:"y", borderRadius:5, maxBarThickness:22},
+      {label:"تعداد استخدام", data:hires, backgroundColor:PALETTE.teal, yAxisID:"y", borderRadius:5, maxBarThickness:22},
     ]},
-    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{afterLabel:(ctx)=>"Avg. cost/hire: "+usd(cph[ctx.dataIndex])}}},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{afterLabel:(ctx)=>"میانگین هزینه‌ی هر استخدام: "+usd(cph[ctx.dataIndex])}}},
       scales:{x:{grid:{display:false}, ticks:{font:{size:9.5}, maxRotation:20}}, y:{grid:{color:PALETTE.line}}}}
   });
 }
@@ -991,17 +1006,17 @@ function renderOpenReqsChart(){
 function renderEngagementChart(dept){
   const rows = ENGAGEMENT_AGG.filter(r => r.Department === (dept==="__ALL__" ? "__ALL__" : dept));
   const sorted = rows.sort((a,b)=>a.SurveyQuarter.localeCompare(b.SurveyQuarter));
-  const quarters = sorted.map(r=>r.SurveyQuarter);
+  const quarters = sorted.map(r=>fmtQ(r.SurveyQuarter));
   const engagementByQ = sorted.map(r=>r.OverallEngagement);
   const enpsByQ = sorted.map(r=>r.eNPS_Response);
   destroy("chart-engagement");
   charts["chart-engagement"] = new Chart(document.getElementById("chart-engagement"), {
     type:"line", data:{labels:quarters, datasets:[
-      {label:"Overall engagement (1-5)", data:engagementByQ, borderColor:PALETTE.teal, backgroundColor:hexAlpha(PALETTE.teal,.08), yAxisID:"y", tension:.3, fill:true, borderWidth:2.5},
-      {label:"eNPS (-100 to 100)", data:enpsByQ, borderColor:PALETTE.orange, yAxisID:"y1", tension:.3, borderWidth:2.5, pointRadius:3},
+      {label:"مشارکت کلی (۱ تا ۵)", data:engagementByQ, borderColor:PALETTE.teal, backgroundColor:hexAlpha(PALETTE.teal,.08), yAxisID:"y", tension:.3, fill:true, borderWidth:2.5},
+      {label:"eNPS (از ۱۰۰- تا ۱۰۰)", data:enpsByQ, borderColor:PALETTE.orange, yAxisID:"y1", tension:.3, borderWidth:2.5, pointRadius:3},
     ]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
-      scales:{x:{grid:{display:false}}, y:{position:"left", min:1, max:5, grid:{color:PALETTE.line}, title:{display:true, text:"Engagement"}},
+      scales:{x:{grid:{display:false}}, y:{position:"left", min:1, max:5, grid:{color:PALETTE.line}, title:{display:true, text:"مشارکت"}},
                y1:{position:"right", min:-100, max:100, grid:{display:false}, title:{display:true, text:"eNPS"}}}}
   });
 }
@@ -1011,9 +1026,9 @@ function renderRadarChart(dept){
   destroy("chart-eng-radar");
   if(!latest) return;
   const dims = ["WorkLifeBalance","ManagerRelationship","CareerGrowth","CompensationSatisfaction","CultureAndInclusion"];
-  const labels = ["Work-life balance","Manager relationship","Career growth","Compensation","Culture & inclusion"];
+  const labels = ["تعادل کار و زندگی","رابطه با مدیر","رشد شغلی","جبران خدمات","فرهنگ و شمول"];
   charts["chart-eng-radar"] = new Chart(document.getElementById("chart-eng-radar"), {
-    type:"radar", data:{labels, datasets:[{label:latest.SurveyQuarter, data:dims.map(d=>latest[d]), backgroundColor:hexAlpha(PALETTE.teal,.18), borderColor:PALETTE.teal, pointBackgroundColor:PALETTE.teal, borderWidth:2}]},
+    type:"radar", data:{labels, datasets:[{label:fmtQ(latest.SurveyQuarter), data:dims.map(d=>latest[d]), backgroundColor:hexAlpha(PALETTE.teal,.18), borderColor:PALETTE.teal, pointBackgroundColor:PALETTE.teal, borderWidth:2}]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
       scales:{r:{min:1, max:5, ticks:{stepSize:1, backdropColor:"transparent"}, grid:{color:PALETTE.line}, pointLabels:{font:{size:10.5}}}}}
   });
@@ -1023,9 +1038,9 @@ function renderTrainingChart(dept){
   const sorted = rows.sort((a,b)=>b.HoursCompleted-a.HoursCompleted);
   destroy("chart-training");
   charts["chart-training"] = new Chart(document.getElementById("chart-training"), {
-    type:"bar", data:{labels:sorted.map(r=>wrapLabel(r.Category)), datasets:[{label:"Hours completed", data:sorted.map(r=>r.HoursCompleted), backgroundColor:DEPT_COLORS, borderRadius:6, maxBarThickness:28}]},
+    type:"bar", data:{labels:sorted.map(r=>wrapLabel(r.Category)), datasets:[{label:"ساعت تکمیل‌شده", data:sorted.map(r=>r.HoursCompleted), backgroundColor:DEPT_COLORS, borderRadius:6, maxBarThickness:28}]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
-      scales:{x:{grid:{display:false}, ticks:{font:{size:9}, maxRotation:28}}, y:{grid:{color:PALETTE.line}, title:{display:true,text:"Hours"}}}}
+      scales:{x:{grid:{display:false}, ticks:{font:{size:9}, maxRotation:28}}, y:{grid:{color:PALETTE.line}, title:{display:true,text:"ساعت"}}}}
   });
 }
 function renderTrainingCostChart(dept){
@@ -1033,9 +1048,9 @@ function renderTrainingCostChart(dept){
   const sorted = rows.sort((a,b)=>b.CostUSD-a.CostUSD);
   destroy("chart-training-cost");
   charts["chart-training-cost"] = new Chart(document.getElementById("chart-training-cost"), {
-    type:"bar", data:{labels:sorted.map(r=>wrapLabel(r.Category)), datasets:[{label:"Cost (USD)", data:sorted.map(r=>r.CostUSD), backgroundColor:PALETTE.purple, borderRadius:6, maxBarThickness:28}]},
+    type:"bar", data:{labels:sorted.map(r=>wrapLabel(r.Category)), datasets:[{label:"هزینه (دلار)", data:sorted.map(r=>r.CostUSD), backgroundColor:PALETTE.purple, borderRadius:6, maxBarThickness:28}]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>usd(ctx.parsed.y)}}},
-      scales:{x:{grid:{display:false}, ticks:{font:{size:9}, maxRotation:28}}, y:{grid:{color:PALETTE.line}, ticks:{callback:(v)=>"$"+(v/1000).toFixed(0)+"k"}}}}
+      scales:{x:{grid:{display:false}, ticks:{font:{size:9}, maxRotation:28}}, y:{grid:{color:PALETTE.line}, ticks:{callback:(v)=>(v/1000).fa(0)+" هزار"}}}}
   });
 }
 
@@ -1048,11 +1063,11 @@ function render9BoxChart(filtered){
   destroy("chart-9box");
   charts["chart-9box"] = new Chart(document.getElementById("chart-9box"), {
     type:"scatter", data:{datasets:[
-      {label:"Standard", data:others, backgroundColor:hexAlpha(PALETTE.slate,.45), pointRadius:3.5},
-      {label:"High potential", data:hipo, backgroundColor:hexAlpha(PALETTE.orange,.85), pointRadius:4.5},
+      {label:"عادی", data:others, backgroundColor:hexAlpha(PALETTE.slate,.45), pointRadius:3.5},
+      {label:"پتانسیل بالا", data:hipo, backgroundColor:hexAlpha(PALETTE.orange,.85), pointRadius:4.5},
     ]},
-    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>`Perf ${ctx.parsed.x.toFixed(1)}, Engagement ${ctx.parsed.y.toFixed(1)}`}}},
-      scales:{x:{min:0.5, max:5.5, title:{display:true,text:"Performance rating"}, grid:{color:PALETTE.line}}, y:{min:0.5, max:5.5, title:{display:true,text:"Engagement score"}, grid:{color:PALETTE.line}}}}
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>`عملکرد ${ctx.parsed.x.fa(1)}، مشارکت ${ctx.parsed.y.fa(1)}`}}},
+      scales:{x:{min:0.5, max:5.5, title:{display:true,text:"امتیاز عملکرد"}, grid:{color:PALETTE.line}}, y:{min:0.5, max:5.5, title:{display:true,text:"امتیاز مشارکت"}, grid:{color:PALETTE.line}}}}
   });
 }
 function renderPerformanceChart(filtered){
@@ -1061,7 +1076,7 @@ function renderPerformanceChart(filtered){
   data.forEach(e => { if(buckets[e.PerformanceRating]!==undefined) buckets[e.PerformanceRating]++; });
   destroy("chart-performance");
   charts["chart-performance"] = new Chart(document.getElementById("chart-performance"), {
-    type:"bar", data:{labels:["1 - Needs Improvement","2 - Developing","3 - Meets Expectations","4 - Exceeds","5 - Outstanding"], datasets:[{data:Object.values(buckets), backgroundColor:PALETTE.tealDark, borderRadius:5, maxBarThickness:34}]},
+    type:"bar", data:{labels:["۱ - نیازمند بهبود","۲ - در حال توسعه","۳ - مطابق انتظار","۴ - فراتر از انتظار","۵ - برجسته"], datasets:[{data:Object.values(buckets), backgroundColor:PALETTE.tealDark, borderRadius:5, maxBarThickness:34}]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
       scales:{x:{grid:{display:false}, ticks:{font:{size:9}, autoSkip:false, maxRotation:20}}, y:{grid:{color:PALETTE.line}}}}
   });
@@ -1073,7 +1088,7 @@ function renderPromotionChart(){
   destroy("chart-promotion");
   charts["chart-promotion"] = new Chart(document.getElementById("chart-promotion"), {
     type:"bar", data:{labels:order.map(o=>wrapLabel(o[0])), datasets:[{data:order.map(o=>o[1]), backgroundColor:PALETTE.green, borderRadius:5, maxBarThickness:20}]},
-    options:{indexAxis:"y", responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>ctx.parsed.x.toFixed(1)+"%"}}},
+    options:{indexAxis:"y", responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8, callbacks:{label:(ctx)=>ctx.parsed.x.fa(1)+"٪"}}},
       scales:{x:{grid:{color:PALETTE.line}}, y:{grid:{display:false}, ticks:{font:{size:9.5}}}}}
   });
 }
@@ -1095,9 +1110,9 @@ function renderHiringPlanChart(){
   const byMonth = months.map(m => sum(HIRING_PLAN.filter(r=>r.Month===m).map(r=>r.PlannedHires)));
   destroy("chart-hiring-plan");
   charts["chart-hiring-plan"] = new Chart(document.getElementById("chart-hiring-plan"), {
-    type:"bar", data:{labels:months.map(fmtMonth), datasets:[{label:"Planned hires (all departments)", data:byMonth, backgroundColor:PALETTE.teal, borderRadius:6, maxBarThickness:26}]},
+    type:"bar", data:{labels:months.map(fmtMonth), datasets:[{label:"استخدام‌های برنامه‌ریزی‌شده (همه‌ی واحدها)", data:byMonth, backgroundColor:PALETTE.teal, borderRadius:6, maxBarThickness:26}]},
     options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
-      scales:{x:{grid:{display:false}, ticks:{maxRotation:0, autoSkip:true, maxTicksLimit:12}}, y:{grid:{color:PALETTE.line}, title:{display:true,text:"Hires"}}}}
+      scales:{x:{grid:{display:false}, ticks:{maxRotation:0, autoSkip:true, maxTicksLimit:12}}, y:{grid:{color:PALETTE.line}, title:{display:true,text:"استخدام"}}}}
   });
 }
 function renderRiskDonut(){
@@ -1107,10 +1122,10 @@ function renderRiskDonut(){
   const labels = order.filter(o=>counts[o]);
   destroy("chart-risk-donut");
   charts["chart-risk-donut"] = new Chart(document.getElementById("chart-risk-donut"), {
-    type:"doughnut", data:{labels, datasets:[{data:labels.map(l=>counts[l]), backgroundColor:labels.map(l=>colors[l]), borderWidth:0}]},
+    type:"doughnut", data:{labels:labels.map(tr), datasets:[{data:labels.map(l=>counts[l]), backgroundColor:labels.map(l=>colors[l]), borderWidth:0}]},
     options:{responsive:true, maintainAspectRatio:false, cutout:"64%", plugins:{legend:{display:false}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}}}
   });
-  document.getElementById("risk-legend").innerHTML = labels.map(l => `<span class="chip"><span class="sw" style="background:${colors[l]}"></span>${l} — ${counts[l]}</span>`).join("");
+  document.getElementById("risk-legend").innerHTML = labels.map(l => `<span class="chip"><span class="sw" style="background:${colors[l]}"></span>${tr(l)} — ${counts[l].toLocaleString("fa-IR")}</span>`).join("");
 }
 function renderDeptForecastChart(){
   const months = [...new Set(DEPT_FORECAST.map(r=>r.Month))].sort();
@@ -1122,8 +1137,8 @@ function renderDeptForecastChart(){
   destroy("chart-dept-forecast");
   charts["chart-dept-forecast"] = new Chart(document.getElementById("chart-dept-forecast"), {
     type:"bar", data:{labels:order.map(o=>wrapLabel(o[0])), datasets:[
-      {label:"Current", data:order.map(o=>o[1]), backgroundColor:PALETTE.slate, borderRadius:4, maxBarThickness:14},
-      {label:"12-month forecast", data:order.map(o=>o[2]), backgroundColor:PALETTE.teal, borderRadius:4, maxBarThickness:14},
+      {label:"فعلی", data:order.map(o=>o[1]), backgroundColor:PALETTE.slate, borderRadius:4, maxBarThickness:14},
+      {label:"پیش‌بینی ۱۲ ماهه", data:order.map(o=>o[2]), backgroundColor:PALETTE.teal, borderRadius:4, maxBarThickness:14},
     ]},
     options:{indexAxis:"y", responsive:true, maintainAspectRatio:false, plugins:{legend:{position:"bottom"}, tooltip:{backgroundColor:"#10203D", padding:10, cornerRadius:8}},
       scales:{x:{grid:{color:PALETTE.line}}, y:{grid:{display:false}, ticks:{font:{size:9}}}}}
@@ -1143,9 +1158,9 @@ function renderHiringByDeptChart(){
 function renderRiskTable(){
   const top = [...RISK_SCORES].sort((a,b)=>b.AttritionRiskScore-a.AttritionRiskScore).slice(0,15);
   document.querySelector("#risk-table tbody").innerHTML = top.map(r => `
-    <tr><td>${r.FullName}</td><td>${wrapLabel(r.Department,false)}</td><td>${r.JobTitle}</td>
-      <td>${Number(r.TenureYears).toFixed(1)}</td><td><strong>${Number(r.AttritionRiskScore).toFixed(1)}</strong></td>
-      <td><span class="badge ${r.RiskBand}">${r.RiskBand}</span></td><td style="color:var(--ink-soft)">${r.TopRiskDrivers}</td></tr>`).join("");
+    <tr><td class="ltr">${r.FullName}</td><td>${wrapLabel(r.Department,false)}</td><td>${tr(r.JobTitle)}</td>
+      <td>${Number(r.TenureYears).fa(1)}</td><td><strong>${Number(r.AttritionRiskScore).fa(1)}</strong></td>
+      <td><span class="badge ${r.RiskBand}">${tr(r.RiskBand)}</span></td><td style="color:var(--ink-soft)">${trDrivers(r.TopRiskDrivers)}</td></tr>`).join("");
 }
 
 /* ---------------------- Nav scroll-spy ---------------------- */
@@ -1161,7 +1176,7 @@ function initScrollSpy(){
 
 document.getElementById("reload-live-btn").addEventListener("click", reloadLive);
 initScrollSpy();
-boot();
+Promise.race([ (document.fonts&&document.fonts.ready)||Promise.resolve(), new Promise(r=>setTimeout(r,1500)) ]).then(boot);
 </script>
 </body>
 </html>
